@@ -11,8 +11,12 @@ function UserForm({values, errors, touched, status}) {
     <div className='form-container'>
 
      <ButtonGroup class='radial-btns'>
-        <Button color='primary'><Link to='/' className='btn-txt'>Login</Link></Button>
-        <Button ><Link to='/register' className='btn-txt'>Sign Up</Link></Button>
+        <Button color='primary' tag={Link} to='/'>
+          Login
+        </Button>
+        <Button tag={Link} to='/register'>
+          Sign Up
+        </Button>
       </ButtonGroup>
 
       <h3 className='form-head'>Welcome to African Marketplace</h3>

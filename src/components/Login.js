@@ -8,12 +8,17 @@ import { Button, ButtonGroup } from 'reactstrap';
 function UserForm({values, errors, touched}) {
   const [rSelected, setRSelected] = useState([]);
 
+  
   return (
     <div className='form-container'>
 
       <ButtonGroup class='radial-btns'>
-        <Button><Link to='/' className='btn-txt'>Login</Link></Button>
-        <Button color='primary'><Link to='/register' className='btn-txt'>Sign Up</Link></Button>
+        <Button tag={Link} to='/'>
+          Login
+        </Button>
+        <Button tag={Link} to='/register' color='primary'>
+          Sign Up
+        </Button>
       </ButtonGroup>
 
       <h3 className='form-head'>Welcome Back!</h3>
