@@ -11,10 +11,12 @@ function UserForm({values, errors, touched}) {
   return (
     <div className='form-container'>
 
-      <ButtonGroup>
-        <Button onClick={() => setRSelected('login')} active={rSelected === 'login'}>Login</Button>
-        <Button onClick={() => setRSelected(1)} active={rSelected === 1}>One</Button>
+      <ButtonGroup class='radial-btns'>
+        <Button><Link to='/' className='btn-txt'>Login</Link></Button>
+        <Button color='primary'><Link to='/register' className='btn-txt'>Sign Up</Link></Button>
       </ButtonGroup>
+
+      <h3 className='form-head'>Welcome Back!</h3>
 
       <Form className = 'login-form'>
 
@@ -38,14 +40,16 @@ function UserForm({values, errors, touched}) {
           />
         </div>
 
-        <div>  
-          <input 
-            className = 'sub-btn'
-            type='submit' 
-            value='Sign In!'
-          />
-          <p>Don't have an account? <Link to="/register">Sign up today!</Link></p>
-        </div>
+      <div>  
+        <Button 
+          color= 'link' 
+          className= 'sub-btn' 
+          type='submit' 
+          value='Sign In!'
+        >
+          Sign In!
+        </Button>
+      </div>
 
       </Form>
     </div> //form container

@@ -20,3 +20,21 @@
 .App-link {
   color: #09d3ac;
 }
+
+.btn-txt {
+  color: white;
+  text-decoration: none;
+}
+
+.form-container {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  background-color: #1F2041;
+  width: 500px;
+  height: 400px;
+}
+
+.form-head {
+  color: white;
+}

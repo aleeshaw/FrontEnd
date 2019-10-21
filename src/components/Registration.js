@@ -3,12 +3,20 @@ import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { Button, ButtonGroup } from 'reactstrap';
 
 function UserForm({values, errors, touched, status}) {
   
   return (
-    <>
-    <h2>Sign Up!</h2>
+    <div className='form-container'>
+
+     <ButtonGroup class='radial-btns'>
+        <Button color='primary'><Link to='/' className='btn-txt'>Login</Link></Button>
+        <Button ><Link to='/register' className='btn-txt'>Sign Up</Link></Button>
+      </ButtonGroup>
+
+      <h3 className='form-head'>Welcome to African Marketplace</h3>
+
     <Form className = 'register-form'>
 
       <div>
@@ -45,14 +53,20 @@ function UserForm({values, errors, touched, status}) {
         </Field> 
 
       </div>
-        <input 
-          className = 'sub-btn'
+      
+      <div>  
+        <Button 
+          color= 'link' 
+          className= 'sub-btn' 
           type='submit' 
-          value='Sign Up!'
-        />
-      <p>Already have an account? <Link to ="/">Sign in!</Link></p>
+          value='Sign In!'
+        >
+          Let's Get Started!
+        </Button>
+      </div>
+
     </Form>
-    </>
+    </div>
   );
 };
 
