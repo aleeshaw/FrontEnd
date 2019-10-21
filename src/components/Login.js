@@ -3,45 +3,52 @@ import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { Button, ButtonGroup } from 'reactstrap';
 
 function UserForm({values, errors, touched}) {
-  
+  const [rSelected, setRSelected] = useState([]);
+
   return (
-    <>
-    <h2>Login!</h2>
-    <Form className = 'login-form'>
+    <div className='form-container'>
 
-      <div>
-        {touched.username && errors.username && <p>{errors.username}</p>}
-        <Field 
-          className = 'text-field'
-          type = 'text'
-          name = 'username'
-          placeholder = 'username'
-        />
-      </div>
+      <ButtonGroup>
+        <Button onClick={() => setRSelected('login')} active={rSelected === 'login'}>Login</Button>
+        <Button onClick={() => setRSelected(1)} active={rSelected === 1}>One</Button>
+      </ButtonGroup>
 
-      <div>
-        {touched.password && errors.password && <p>{errors.password}</p>}
-        <Field 
-          className = 'text-field'
-          type = 'password'
-          name = 'password'
-          placeholder = 'Password' 
-        />
-      </div>
+      <Form className = 'login-form'>
 
-      <div>  
-        <input 
-          className = 'sub-btn'
-          type='submit' 
-          value='Sign In!'
-        />
+        <div>
+          {touched.username && errors.username && <p>{errors.username}</p>}
+          <Field 
+            className = 'text-field'
+            type = 'text'
+            name = 'username'
+            placeholder = 'username'
+          />
+        </div>
 
-        <p>Don't have an account? <Link to="/register">Sign up today!</Link></p>
-      </div>
-    </Form>
-    </>
+        <div>
+          {touched.password && errors.password && <p>{errors.password}</p>}
+          <Field 
+            className = 'text-field'
+            type = 'password'
+            name = 'password'
+            placeholder = 'Password' 
+          />
+        </div>
+
+        <div>  
+          <input 
+            className = 'sub-btn'
+            type='submit' 
+            value='Sign In!'
+          />
+          <p>Don't have an account? <Link to="/register">Sign up today!</Link></p>
+        </div>
+
+      </Form>
+    </div> //form container
   );
 };
 
@@ -64,7 +71,7 @@ const FormikUserForm = withFormik({
   handleSubmit(values, { resetForm, setSubmitting, }) {
 
       axios 
-        .post("https://reqres.in/api/users", values) //temporary user list api
+        .post("https://lbs-african-marketplace.herokuapp.com/api/auth/login", values) //temporary user list api
         .then(results => {
           /*if (results.data.token) {
             //push to specific user dashboard/page

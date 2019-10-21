@@ -5,12 +5,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 function UserForm({values, errors, touched, status}) {
-  const [users, setUsers] = useState([]);
-
-  useEffect(() => {
-    status && setUsers(users => [...users, status])
-  }, [status])
-
+  
   return (
     <>
     <h2>Sign Up!</h2>
@@ -27,16 +22,6 @@ function UserForm({values, errors, touched, status}) {
       </div>
 
       <div>
-        {touched.email && errors.email && <p>{errors.email}</p>}
-        <Field 
-          className = 'text-field'
-          type = 'text'
-          name = 'email'
-          placeholder = 'email' 
-        />
-      </div>
-
-      <div>
         {touched.password && errors.password && <p>{errors.password}</p>}
         <Field 
           className = 'text-field'
@@ -46,22 +31,25 @@ function UserForm({values, errors, touched, status}) {
         />
       </div>
 
-      <div className='tos-submit'>
-        {touched.terms && errors.terms && <p>{errors.terms}</p>}
-        <label>
+      <div className='department'>
+        {touched.department && errors.departmetn && <p>{errors.department}</p>}
+        
         <Field
-          type = 'checkbox'
-          name = 'terms'
-          checked={values.terms}
-        />
-        I Agree to the Terms of Service
-        </label>
+          component = 'select'
+          name = 'department'
+          className='department-select'
+        >
+          <option>Buyer or Seller?</option>
+          <option value='buyer'>Buyer</option>
+          <option value='seller'>Seller</option>
+        </Field> 
+
+      </div>
         <input 
           className = 'sub-btn'
           type='submit' 
           value='Sign Up!'
         />
-      </div>
       <p>Already have an account? <Link to ="/">Sign in!</Link></p>
     </Form>
     </>
@@ -69,36 +57,27 @@ function UserForm({values, errors, touched, status}) {
 };
 
 const FormikUserForm = withFormik({
-  mapPropsToValues ({username, email, password, terms}) {
+  mapPropsToValues ({username, department, password}) {
     return {
       username: username ||"",
-      email: email || "",
       password: password || "",
-      terms: terms || false
+      department: department || ""
     };
   },
   //VALIDATION
   validationSchema: Yup.object().shape({
     username: Yup.string()
       .required("Name is required"),
-    email: Yup.string()
-      .email("Email is not valid")
-      .required("Email is required."),
     password: Yup.string()
       .min(8, "Please choose a password with at least 8 characters.")
       .required("Password is required."),
-    terms: Yup.mixed()
-      .required("Terms of Service Agreement required!")
   }),
   //END VALIDATION
 
   handleSubmit(values, { resetForm, setErrors, setSubmitting, setStatus }) {
     
-    if (values.email === "12234@email.com") {
-      setErrors({email: "A user with that email is already registered."});
-    } else {
       axios 
-        .post("https://reqres.in/api/users", values) //temporary user list api
+        .post("https://lbs-african-marketplace.herokuapp.com/api/auth/register", values) 
         .then(results => {
           console.log(results); //logging results
           setStatus(results.data);
@@ -109,7 +88,7 @@ const FormikUserForm = withFormik({
           console.log("There's been an error: ", error);
           setSubmitting(false);
         });
-    }
+    
   }
 })(UserForm);
 
