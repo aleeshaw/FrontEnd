@@ -27,7 +27,7 @@
   display: flex;
   flex-direction: column;
   background-color: #1F2041;
-  width: 700px;
+  width: 600px;
   height: 550px;
   border-radius: 8px;
   margin-left: 23%;
@@ -114,3 +114,4 @@
   background-color: #0E8187 !important;
   border-color: #0E8187 !important;
 }
+

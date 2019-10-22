@@ -6,8 +6,7 @@ import { Link } from 'react-router-dom';
 import { Button, ButtonGroup } from 'reactstrap';
 
 function UserForm({values, errors, touched}) {
-  const [rSelected, setRSelected] = useState([]);
-
+  
   return (
     <div className='form-container'>
 
