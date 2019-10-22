@@ -1,0 +1,15 @@
+export const LOGIN = "LOGIN";
+export const ERROR_LOGIN = "ERROR_LOGIN";
+export const LOADING = "LOADING";
+export const LOADING_PRODUCTS = "LOADING_PRODUCTS";
+export const ERROR = "ERROR";
+export const ERROR_SIGNUP = "ERROR_SIGNUP";
+export const SIGNUP = "SIGNUP";
+export const GET_ALL_PRODUCTS = "GET_ALL_PRODUCTS";
+export const GET_USER_PRODUCTS = "GET_USER_PRODUCTS";
+export const ERROR_PRODUCTS = "ERROR_PRODUCTS";
+export const GET_A_PRODUCTS = "GET_A_PRODUCTS";
+export const ADD_PRODUCTS = "ADD_PRODUCTS";
+export const UPDATE_PRODUCTS = "UPDATE_PRODUCTS";
+export const DELETE = "DELETE";
+export const ORDERS = "ORDERS";
