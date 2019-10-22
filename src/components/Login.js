@@ -8,25 +8,27 @@ import { Button, ButtonGroup } from 'reactstrap';
 function UserForm({values, errors, touched}) {
   const [rSelected, setRSelected] = useState([]);
 
-  
   return (
     <div className='form-container'>
 
-      <ButtonGroup class='radial-btns'>
-        <Button tag={Link} to='/'>
+      <ButtonGroup 
+        className = 'radial-btn' 
+        size = 'lg'
+      >
+        <Button tag={Link} to='/' className='selected'>
           Login
         </Button>
-        <Button tag={Link} to='/register' color='primary'>
+        <Button tag={Link} to='/register' className='unselected'>
           Sign Up
         </Button>
       </ButtonGroup>
 
       <h3 className='form-head'>Welcome Back!</h3>
 
-      <Form className = 'login-form'>
+      <Form className = 'form'>
 
         <div>
-          {touched.username && errors.username && <p>{errors.username}</p>}
+          {touched.username && errors.username && <p className='errs'>{errors.username}</p>}
           <Field 
             className = 'text-field'
             type = 'text'
@@ -36,7 +38,7 @@ function UserForm({values, errors, touched}) {
         </div>
 
         <div>
-          {touched.password && errors.password && <p>{errors.password}</p>}
+          {touched.password && errors.password && <p className='errs'>{errors.password}</p>}
           <Field 
             className = 'text-field'
             type = 'password'
@@ -47,12 +49,11 @@ function UserForm({values, errors, touched}) {
 
       <div>  
         <Button 
-          color= 'link' 
           className= 'sub-btn' 
           type='submit' 
-          value='Sign In!'
+          value='signIn'
         >
-          Sign In!
+          <span>Sign In!</span>
         </Button>
       </div>
 

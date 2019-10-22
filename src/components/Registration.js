@@ -10,21 +10,24 @@ function UserForm({values, errors, touched, status}) {
   return (
     <div className='form-container'>
 
-     <ButtonGroup class='radial-btns'>
-        <Button color='primary' tag={Link} to='/'>
+      <ButtonGroup 
+        size = 'lg '
+        className = 'radial-btn'
+      >
+        <Button color='primary' tag={Link} to='/' className='unselected'>
           Login
         </Button>
-        <Button tag={Link} to='/register'>
+        <Button tag={Link} to='/register' className='selected'>
           Sign Up
         </Button>
       </ButtonGroup>
 
       <h3 className='form-head'>Welcome to African Marketplace</h3>
 
-    <Form className = 'register-form'>
+    <Form className = 'form'>
 
       <div>
-        {touched.username && errors.username && <p>{errors.username}</p>}
+        {touched.username && errors.username && <p className='errs'>{errors.username}</p>}
         <Field 
           className = 'text-field'
           type = 'text'
@@ -34,7 +37,7 @@ function UserForm({values, errors, touched, status}) {
       </div>
 
       <div>
-        {touched.password && errors.password && <p>{errors.password}</p>}
+        {touched.password && errors.password && <p className='errs'>{errors.password}</p>}
         <Field 
           className = 'text-field'
           type = 'password'
@@ -44,12 +47,12 @@ function UserForm({values, errors, touched, status}) {
       </div>
 
       <div className='department'>
-        {touched.department && errors.departmetn && <p>{errors.department}</p>}
+        {touched.department && errors.departmetn && <p className='errs'>{errors.department}</p>}
         
         <Field
           component = 'select'
           name = 'department'
-          className='department-select'
+          className='dept-select'
         >
           <option>Buyer or Seller?</option>
           <option value='buyer'>Buyer</option>
@@ -60,12 +63,13 @@ function UserForm({values, errors, touched, status}) {
       
       <div>  
         <Button 
-          color= 'link' 
+          
           className= 'sub-btn' 
           type='submit' 
-          value='Sign In!'
+          value='register'
+          
         >
-          Let's Get Started!
+          <span>Let's Get Started!</span>
         </Button>
       </div>
 
