@@ -115,3 +115,8 @@
   border-color: #0E8187 !important;
 }
 
+.dash-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

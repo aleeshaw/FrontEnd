@@ -96,20 +96,20 @@ const FormikUserForm = withFormik({
   }),
   //END VALIDATION
 
-  handleSubmit(values, { resetForm, setSubmitting, setStatus }) {
+  handleSubmit(values, { resetForm, setSubmitting, setStatus, props }) {
     
-      axios 
-        .post(`https://lbs-african-marketplace.herokuapp.com/auth/register`, values) 
-        .then(results => {
-          console.log(results); //logging results
-          setStatus(results.data);
-          resetForm(); //resetting form after submit
-          setSubmitting(false); 
-        })
-        .catch(error => {
-          console.log("There's been an error: ", error);
-          setSubmitting(false);
-        });
+    axios 
+      .post(`https://lbs-african-marketplace.herokuapp.com/auth/register`, values) 
+      .then(results => {
+        console.log(results);
+        setStatus(results.data);
+        props.history.push("/"); //renders login after successful register
+      })
+      .catch(error => {
+        console.log("There's been an error: ", error);
+        setSubmitting(false);
+        resetForm(); //resets from after error submit
+      });
     
   }
 })(Registration);

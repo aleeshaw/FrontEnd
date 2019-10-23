@@ -77,25 +77,22 @@ const FormikUserForm = withFormik({
   }),
   //END VALIDATION
 
-  handleSubmit(values, { resetForm, setSubmitting, }) {
+  handleSubmit(values, { setSubmitting, props }) {
 
-      axios 
-        .post(`https://lbs-african-marketplace.herokuapp.com/auth/login`, values) 
-        .then(results => {
-          /*if (results.data.token) {
-            //push props.history to specific user dashboard/userpage
-          } */
+    axios 
+      .post(`https://lbs-african-marketplace.herokuapp.com/auth/login`, values) 
+      .then(results => {
           
-          console.log(results); //logging results
-          resetForm(); //resetting form after submit
-          setSubmitting(false); 
-        })
-        .catch(error => {
-          console.log("There's been an error: ", error);
-          setSubmitting(false);
-        });
-    }
+        if (results.data.token) {
+          props.history.push("/dashboard");
+        }
+        console.log(results);
+      })
+      .catch(error => {
+        console.log("There's been an error: ", error);
+        setSubmitting(false);
+      });
   }
-)(Login);
+})(Login);
 
 export default FormikUserForm;
