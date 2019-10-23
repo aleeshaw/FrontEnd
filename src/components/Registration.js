@@ -5,7 +5,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { Button, ButtonGroup } from 'reactstrap';
 
-function UserForm({values, errors, touched, status}) {
+function Registration({values, errors, touched, status}) {
   
   return (
     <div className='form-container'>
@@ -96,10 +96,10 @@ const FormikUserForm = withFormik({
   }),
   //END VALIDATION
 
-  handleSubmit(values, { resetForm, setErrors, setSubmitting, setStatus }) {
+  handleSubmit(values, { resetForm, setSubmitting, setStatus }) {
     
       axios 
-        .post("https://lbs-african-marketplace.herokuapp.com/api/auth/register", values) 
+        .post(`https://lbs-african-marketplace.herokuapp.com/auth/register`, values) 
         .then(results => {
           console.log(results); //logging results
           setStatus(results.data);
@@ -112,8 +112,6 @@ const FormikUserForm = withFormik({
         });
     
   }
-})(UserForm);
+})(Registration);
 
 export default FormikUserForm;
-
-//TODO User API to to set up individual user pages and user accounts.

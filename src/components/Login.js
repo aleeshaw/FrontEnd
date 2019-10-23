@@ -5,7 +5,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { Button, ButtonGroup } from 'reactstrap';
 
-function UserForm({values, errors, touched}) {
+function Login({values, errors, touched}) {
   
   return (
     <div className='form-container'>
@@ -80,10 +80,10 @@ const FormikUserForm = withFormik({
   handleSubmit(values, { resetForm, setSubmitting, }) {
 
       axios 
-        .post("https://lbs-african-marketplace.herokuapp.com/api/auth/login", values) //temporary user list api
+        .post(`https://lbs-african-marketplace.herokuapp.com/auth/login`, values) 
         .then(results => {
           /*if (results.data.token) {
-            //push to specific user dashboard/page
+            //push props.history to specific user dashboard/page
           } */
           
           console.log(results); //logging results
@@ -96,6 +96,6 @@ const FormikUserForm = withFormik({
         });
     }
   }
-)(UserForm);
+)(Login);
 
 export default FormikUserForm;
