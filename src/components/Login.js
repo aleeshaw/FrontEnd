@@ -83,7 +83,7 @@ const FormikUserForm = withFormik({
         .post(`https://lbs-african-marketplace.herokuapp.com/auth/login`, values) 
         .then(results => {
           /*if (results.data.token) {
-            //push props.history to specific user dashboard/page
+            //push props.history to specific user dashboard/userpage
           } */
           
           console.log(results); //logging results
