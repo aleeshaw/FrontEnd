@@ -1,7 +1,7 @@
 import * as actions from "../actions/actions";
 
 const initialState = {
-  products: [],
+  items: [],
   error: "",
   loading: false,
   items: 0,
@@ -16,45 +16,45 @@ const itemsReducer = (state = initialState, action) => {
         ...state,
         items: state.items + 1
       };
-    case actions.GET_ALL_PRODUCTS:
+    case actions.GET_ALL_ITEMS:
       return {
         ...state,
-        products: action.payload,
+        items: action.payload,
         error: "",
         addMessage: ""
       };
-    case actions.LOADING_PRODUCTS:
+    case actions.LOADING_ITEMS:
       return {
         ...state,
         loading: action.payload,
         addMessage: "",
         error: ""
       };
-    case actions.GET_USER_PRODUCTS:
+    case actions.GET_USER_ITEMS:
       return {
         ...state,
-        products: action.payload,
+        items: action.payload,
         update: ""
       };
-    case actions.ADD_PRODUCTS:
+    case actions.ADD_ITEMS:
       return {
         ...state,
-        products: state.products.concat(action.payload),
+        items: state.items.concat(action.payload),
         error: "",
-        addMessage: "succesful"
+        addMessage: "success"
       };
-    case actions.GET_A_PRODUCTS:
+    case actions.GET_A_ITEMS:
       return {
         ...state,
         error: "",
         update: action.payload
       };
-    case actions.UPDATE_PRODUCTS:
+    case actions.UPDATE_ITEMS:
       return {
         ...state,
-        products: product(),
+        items: items(),
         error: "",
-        addMessage: "updated succesful"
+        addMessage: "updated success"
       };
     default:
       return state;
