@@ -40,7 +40,8 @@
 
 .form-head {
   color: white;
-  margin: 7% 0 0 0;
+  margin: 7% auto 0 auto;
+  text-align: center;
 }
 
 .form {
@@ -48,6 +49,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  text-align: center;
 }
 
 .text-field {
@@ -57,7 +59,8 @@
   border: #FFC857 solid 1.25px;
   color: white;
   padding-left: 20px;
-  font-size: 1.5rem
+  font-size: 1.5rem;
+  margin: 0 auto;
 }
 
 .text-field::placeholder {
@@ -72,7 +75,8 @@
   width: 80%;
   height: 50px;
   padding-left: 20px;
-
+  background-color: white;
+  margin: 0 auto;
 }
 
 .sub-btn {

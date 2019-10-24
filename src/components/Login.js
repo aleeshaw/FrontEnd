@@ -23,7 +23,7 @@ function Login({values, errors, touched}) {
         </Button>
       </ButtonGroup>
 
-      <h3 className='form-head'>Welcome Back!</h3>
+      <h2 className='form-head'>Welcome Back!</h2>
 
       <Form className = 'form'>
 
