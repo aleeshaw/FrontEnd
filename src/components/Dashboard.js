@@ -11,7 +11,14 @@ const Dashboard = () => {
     <Link to='/'>
       <Button>Sign Out</Button>
     </Link>
-    </div>    
+    </div>
+    
+    <section className = 'user-items'>
+      <h4>My items</h4>
+      <div>user items diplayed here</div>
+    </section>
+    
+    <aside>Add New Item</aside>    
     </>
   )
 };
