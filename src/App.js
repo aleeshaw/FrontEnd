@@ -46,6 +46,7 @@ const App = () => {
 	return (
     <>
     <Routes />
+    <Route />
 		{/* <div className="container">
 			<h1>African Marketplace Product List</h1>
 			<div className="flex-row">
