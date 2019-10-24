@@ -1,13 +1,8 @@
-import React, { useState, Fragment, Component } from "react";
-import { Route, Link, withRouter } from "react-router-dom";
+import React from "react";
+import { Route } from "react-router-dom";
 import Login from "./components/Login";
-import PrivateRoute from "./components/utilis/PrivateRoute";
 import Signup from "./components/Signup";
-import Auth from "./components/AuthService";
 import SignOutButton from "./components/SignOutButton";
-import AddItemForm from "./components/AddItemForm";
-import EditItemForm from "./components/EditItemForm";
-import ItemTable from "./tables/ItemTable";
 import Dashboard from "./components/Dashboard";
 
 const App = () => {
