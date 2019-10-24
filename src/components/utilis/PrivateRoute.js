@@ -1,19 +1,22 @@
 import React from "react";
-import { Route, Redirect } from "react-router-dom";
+import { Route, Link, Redirect } from "react-router-dom";
+import Auth from "../AuthService";
 
-const PrivateRoute = ({ component: Component, ...rest }) => {
-  return (
+const PrivateRoute = ({ component: Component, render, ...rest }) => (
     <Route
-      {...rest}
-      render={props => {
-        if (localStorage.getItem("token")) {
-          return <Component {...props} />;
-        } else {
-          return <Redirect to="/login" />;
+        {...rest}
+        render={props =>
+            Auth.loggedIn() ? (
+                render ? (
+                    render(props)
+                ) : (
+                    <Component {...props} />
+                )
+            ) : (
+                <Redirect to="/login" />
+            )
         }
-      }}
     />
-  );
-};
+);
 
 export default PrivateRoute;
