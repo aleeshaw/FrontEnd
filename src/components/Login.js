@@ -77,12 +77,12 @@ const FormikUserForm = withFormik({
   }),
   //END VALIDATION
 
-  handleSubmit(values, { setSubmitting, props }) {
+  handleSubmit(values, { setSubmitting, setStatus, props }) {
 
     axios 
       .post(`https://lbs-african-marketplace.herokuapp.com/auth/login`, values) 
       .then(results => {
-          
+         setStatus(results.data); 
         if (results.data.token) {
           props.history.push("/dashboard");
         }
