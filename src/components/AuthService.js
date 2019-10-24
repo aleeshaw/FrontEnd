@@ -2,7 +2,7 @@ import decode from "jwt-decode";
 
 class AuthService {
     constructor(apiRoot) {
-        this.apiRoot = apiRoot || "http://localhost:5000";
+        this.apiRoot = apiRoot || "https://lbs-african-marketplace.herokuapp.com";
         this.fetch = this.fetch.bind(this);
         this.login = this.login.bind(this);
         this.getProfile = this.getProfile.bind(this);

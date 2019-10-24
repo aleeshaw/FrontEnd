@@ -118,7 +118,7 @@ class Login extends Component {
 
         Auth.login(this.state.username, this.state.password)
             .then(res => {
-                this.props.history.push("/");
+                this.props.history.push("/dashboard");
             })
             .catch(err => {
                 alert(err);
