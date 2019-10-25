@@ -25,8 +25,8 @@ class Login extends Component {
                 <Row>
                     <Col sm="12" md={{ size: 6, offset: 3 }}>
                         <Form className="form">
-                            <div class="mb-5">
-                                <h1 class="text-center mt-3">
+                            <div className="mb-5">
+                                <h1 className="text-center mt-3">
                                     African Marketplace
                                 </h1>
                                 <div className="mt-5">
@@ -46,7 +46,7 @@ class Login extends Component {
                                                     md={{ size: 6, offset: 3 }}
                                                 >
                                                     <input
-                                                        class="form-control form-control-sm"
+                                                        className="form-control form-control-sm"
                                                         placeholder="Username goes here..."
                                                         name="username"
                                                         type="text"
@@ -60,7 +60,7 @@ class Login extends Component {
                                                     md={{ size: 6, offset: 3 }}
                                                 >
                                                     <input
-                                                        class="form-control form-control-sm"
+                                                        className="form-control form-control-sm"
                                                         placeholder="Password goes here..."
                                                         name="password"
                                                         type="password"
@@ -75,7 +75,7 @@ class Login extends Component {
                                                 >
                                                     <button
                                                         type="button"
-                                                        class="btnsm  btn-info center   btn-block"
+                                                        className="btnsm  btn-info center   btn-block"
                                                         onClick={
                                                             this
                                                                 .handleFormSubmit
@@ -118,6 +118,7 @@ class Login extends Component {
 
         Auth.login(this.state.username, this.state.password)
             .then(res => {
+              console.log(res);
                 this.props.history.push("/dashboard");
             })
             .catch(err => {
