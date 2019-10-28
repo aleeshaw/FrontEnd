@@ -9,9 +9,11 @@ import {
   CardImg
  } from 'reactstrap';
 import '../Feed.css';
+import { Link } from 'react-router-dom';
+import { itemData } from './itemData';
 
 const Feed = () => {
-
+  document.body.style.backgroundColor = 'white';
 // const [items, setItems] = useState([]);
 // useEffect(() => {
 //   const getItems = () => {
@@ -32,52 +34,25 @@ const Feed = () => {
 //   getItems();
 // },[props.token]);
 
-  const itemsData = [
-    {
-      "id": 1,
-      "name": "eggs",
-      "description": "seed testing",
-      "price": "4",
-      "location": "Sauti",
-      "category": "cooking",
-      "URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAdHhqJOD5CGPHT8KJtpbXCIxTfoAo5RLGxVCxnxGkYKvu1NQzhg",
-      "user_id": 1
-    },
-    {
-      "id": 3,
-      "name": "test",
-      "description": "test",
-      "price": "1.89",
-      "location": null,
-      "category": null,
-      "URL": null,
-      "user_id": 4
-    },
-    {
-      "id": 4,
-      "name": "flour",
-      "description": "wheat",
-      "price": "1.89",
-      "location": null,
-      "category": null,
-      "URL": null,
-      "user_id": 4
-    }
-  ]
+  useEffect(() => {
+    Axios
+      .get("")
+  })
 
   return (
     <>
-    <h1>Feed</h1>
+    <Link to="/dashboard"><button>Dash</button></Link>
+    <h1>User Community Market</h1>
 
     <CardGroup>
-      {itemsData.map(item => (
+      {itemData.map(item => (
         <Card key={item.id}>
           <CardBody>
             <CardImg src={item.URL} alt={item.name}/>
-            <CardTitle>{item.name}</CardTitle>
-            <CardSubtitle>{item.description}</CardSubtitle>
-            <CardSubtitle>{item.location}</CardSubtitle>
-            <CardSubtitle>{item.price}</CardSubtitle>
+            <CardTitle>Item: {item.name}</CardTitle>
+            <CardSubtitle>Description: {item.description}</CardSubtitle>
+            <CardSubtitle>Location: {item.location}</CardSubtitle>
+            <CardSubtitle>Price: {item.price}</CardSubtitle>
           </CardBody>
         </Card>
       ))}

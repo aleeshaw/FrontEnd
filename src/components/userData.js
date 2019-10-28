@@ -1,4 +1,4 @@
-[
+export const userData = [
   {
     "id": 1,
     "username": "simskev",
@@ -7,12 +7,12 @@
   {
     "id": 2,
     "username": "test100",
-    "department": null
+    "department": "buyer"
   },
   {
     "id": 4,
     "username": "test3",
-    "department": "test"
+    "department": "seller"
   },
   {
     "id": 5,
@@ -36,12 +36,12 @@
   },
   {
     "id": 9,
-    "username": "test9",
-    "department": "test"
+    "username": "tested",
+    "department": "buyer"
   },
   {
     "id": 10,
-    "username": "",
+    "username": "slugger",
     "department": "seller"
   },
   {
@@ -51,7 +51,7 @@
   },
   {
     "id": 12,
-    "username": "t",
+    "username": "lookit",
     "department": "buyer"
   },
   {
@@ -61,7 +61,7 @@
   },
   {
     "id": 14,
-    "username": "adam1",
+    "username": "user1234",
     "department": "buyer"
   },
   {
