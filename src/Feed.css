@@ -1,16 +1,18 @@
 .card-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+ display: flex;
+ justify-content: space-evenly;
+ flex-direction: column;
 }
 
 .item-card {
-  width:300px;
-  height: 400px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  margin-left: 50px;
+  width:500px;
+  height: 600px;
+  margin-left: 57px;
   margin-bottom: 50px;
+}
 
+.feed-header {
+  margin: -40px auto 70px auto;
+  text-align: center;
+  color: #FFC857
 }

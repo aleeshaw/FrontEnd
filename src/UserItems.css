@@ -38,11 +38,11 @@ body {
   text-align: left;
  }
  .user-form {
-  width: 460px !important;
+  width: 460px;
   margin: auto;
   padding: 32px;
   font-weight: bold;
-  background-color: rgba(121, 34, 67, 0.9) !important;
+  background-color: rgba(121, 34, 67, 0.9) ;
   box-shadow: 2px 2px 10px 10px rgba(0, 0, 0, 0.1);
  }
  .error {
@@ -81,7 +81,8 @@ body {
   max-width: 150px;
   margin: 32px 0;
   padding: 12px 20px;
-  border-style: none;
+  border-color: transparent;
+  border-radius: 10px;
   background-color: #14586b;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
   font-size: 17px;
@@ -106,4 +107,8 @@ body {
 
  .img-hide {
    display: none;
+ }
+
+ select {
+   background-color: white;
  }

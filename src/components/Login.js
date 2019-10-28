@@ -13,6 +13,7 @@ import {
 } from "reactstrap";
 
 class Login extends Component {
+  
   constructor() {
       super();
   }
@@ -20,6 +21,7 @@ class Login extends Component {
       if (Auth.loggedIn()) this.props.history.replace("/");
   }
   render() {
+    document.body.style.backgroundColor = 'white';
     return (
       <Container>
         <Row>
@@ -119,7 +121,7 @@ class Login extends Component {
         Auth.login(this.state.username, this.state.password)
             .then(res => {
               console.log(res);
-                this.props.history.push("/dashboard");
+                this.props.history.push("/feed");
             })
             .catch(err => {
                 alert(err);

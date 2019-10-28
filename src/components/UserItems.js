@@ -86,7 +86,7 @@ const UserItems = () => {
                 )}
             </div>
             <div className="flex-large">
-                <h2>View items</h2>
+                <h2>My items</h2>
                 <ItemTable
                     items={items}
                     editRow={editRow}
