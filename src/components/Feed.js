@@ -34,19 +34,16 @@ const Feed = () => {
 //   getItems();
 // },[props.token]);
 
-  useEffect(() => {
-    Axios
-      .get("")
-  })
 
   return (
     <>
     <Link to="/dashboard"><button>Dash</button></Link>
     <h1>User Community Market</h1>
 
-    <CardGroup>
+    <CardGroup width="100%" className="card-container">
       {itemData.map(item => (
-        <Card key={item.id}>
+        <div key={item.id}>
+        <Card className="item-card">
           <CardBody>
             <CardImg src={item.URL} alt={item.name}/>
             <CardTitle>Item: {item.name}</CardTitle>
@@ -55,6 +52,7 @@ const Feed = () => {
             <CardSubtitle>Price: {item.price}</CardSubtitle>
           </CardBody>
         </Card>
+        </div>
       ))}
     </CardGroup>
     </>
