@@ -5,6 +5,7 @@ import Signup from "./components/Signup";
 import SignOutButton from "./components/SignOutButton";
 import Dashboard from "./components/Dashboard";
 import Feed from "./components/Feed";
+import './App.css';
 
 const App = () => {
   

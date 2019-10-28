@@ -5,6 +5,7 @@ import Signup from "./Signup";
 import AddItemForm from './AddItemForm';
 import EditItemForm from "./EditItemForm";
 import ItemTable from "../tables/ItemTable";
+import '../UserItems.css';
 
 const UserItems = () => {
 
@@ -56,7 +57,7 @@ const UserItems = () => {
   };
 
   return (
-    <div className="container">
+    <div className="section">
         <h1>African Marketplace Product List</h1>
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={Signup} />
